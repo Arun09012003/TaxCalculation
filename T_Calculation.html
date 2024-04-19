@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax Calculator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            *{
+                background-color:#f1f4f6;
+            }
+            .cont{
+                margin:1% 1% 1% 1%;
+                border-radius: 8px;
+                height: 500px;
+                border: none;
+                height: 580px;
+            }
+            .head{
+                width: auto;
+                height: 25px;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                background-color:#9dacba;
+            }
+            .form1{
+                border: 2px solid lightgray;
+                height: 470px;
+                width: 350px;
+                margin-left: 37%;
+                margin-top: 5%;
+                background-color: white;
+                
+            }
+            .formContainer1{
+                border-radius: 8px;
+                margin: 0 0 0 0;
+                background-color: white;
+                height: 100%;
+            }
+            .contentContainer
+            {
+                margin: 20% 8% 8% 8%;
+                background-color: white;
+            }
+            .custom-width{
+                width: 100%;
+                margin-top: 6%;
+                height: 35px;
+                border: none;
+                background-color: #6558f4;
+                
+            }
+           
+            
+            .selection{
+                margin-bottom: 10px;
+                height: 35px;
+                width: 100%;
+                border-radius: 5px;
+                border: 1px solid lightgray;
+            }
+            .labels, select, option,svg,span,i{
+                background-color: white;
+            }
+            
+            .hidden-page{
+                transform: translateY(-170%);
+                width: 700px;
+                height: 300px;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="cont">
+            <div class="formContainer1">
+                <div class="head"></div>
+                    <form action="" name="mainForm" class="form1">
+                        <div class="contentContainer">
+                            <label class="labels">Enter gross annual income</label><span> </span><i><span class="tooltip-icon" data-toggle="tooltip" title="Gross annual income is your total salary in a reay before any deductions "><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                              </svg></span></span></i><br>
+                            <input type="text" class="form-control" id="txtaIncome" placeholder="Enter gross annual income" ><br> 
+                            <label class="labels">Enter extra income</label><span> </span><i><span class="tooltip-icon" data-toggle="tooltip" title="Your extra income "><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                              </svg></span></span></i><br>
+                            <input type="text" class="form-control" id="eIncome" placeholder="Enter extra income"><br>
+                            <label class="labels">Enter age group</label><span> </span><i><span class="tooltip-icon" data-toggle="tooltip" title="Your Age "><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                              </svg></span></span></i><br>
+                            <select id="age"  class="selection">
+                                <option value="" selected><p></p></option>
+                                <option value="< 40"><p>< 40</p></option>
+                                <option value="≥ 40 but < 60"><p>≥ 40 but < 60</p></option>
+                                <option value="≥ 60"><p>≥ 60</p></option>
+                            </select><br>
+                            <label class="labels">Enter total aplicable deductions</label><span> </span><i><span class="tooltip-icon" data-toggle="tooltip" title="Total aplicable deductions"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                              </svg></span></span></i><br>
+                            <input type="text" class="form-control" id="txtT-a-deduction" placeholder="Enter total aplicable deductions"><br>
+                            <input type="submit" class="btn btn-primary custom-width" onclick="javascript: calculation();Show();" id="btnSubmit">
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        <div class="container hidden-page" id="hiddenForm"  style="display:none;">
+            <form align="center">
+                <div>
+                    <h1>Your overall income will be</h1><br>
+                    <h3 id="textShow"></h3><br>
+                    <h5>after tax deductions</h5><br>
+                    <input type="submit" name="btnClose" class="btn btn-primary custom-width" onclick="close()" value="Close">
+                </div>
+            </form>
+        </div>
+        <script>
+            $(document).ready(function(){
+              $('[data-toggle="tooltip"]').tooltip();   
+            });
+        </script>
+        <script>
+            function calculation(){
+                const iGrossAnnualIncome = parseInt(document.getElementById('txtaIncome').value);
+                const iExtra_Income = parseInt(document.getElementById('eIncome').value);
+                const Age = document.getElementById('age').value;
+                const iDeduction = parseInt(document.getElementById('txtT-a-deduction').value);
+                const Value = iGrossAnnualIncome+iExtra_Income-iDeduction;
+                if(Age=="< 40"){
+                    if(Value>=800000)
+                    {
+                        const totalTax=(Value*0.3);
+                        const overallIncome = Value-totalTax;
+                        document.getElementById("textShow").innerHTML +="<p>"+overallIncome+"</p>";
+                    }
+                    else{
+                        if(Value<=800000)
+                        {
+                            alert("No Tax");
+                        }
+                    }
+                }
+                else if(Age=="≥ 40 but < 60"){
+                    if(Value>=800000)
+                    {
+                        const totalTax=(Value*0.4);
+                        const overallIncome = Value-totalTax;
+                        document.getElementById("textShow").innerHTML +="<p>"+overallIncome+"</p>";
+                       
+                    }
+                    else{
+                        if(Value<=800000)
+                        {
+                            alert("No Tax");
+                        }
+                    }
+                }
+                else{
+                    if(Age=="≥ 60"){
+                        if(Value>=800000)
+                        {
+                            const totalTax=(Value*0.1);
+                            const overallIncome = Value-totalTax;
+                            document.getElementById("textShow").innerHTML +="<p>"+overallIncome+"</p>";
+                        }
+                        else{
+                            if(Value<=800000)
+                            {
+                                alert("No Tax");
+                            }
+                        }
+                    }
+                }
+            }
+            function Show(){
+                document.getElementById("hiddenForm").style.display="Block";
+            }
+            function close(){
+                document.getElementById("hiddenForm").style.display="none";
+            }
+        </script>
+    </body>
+</html>
